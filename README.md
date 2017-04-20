@@ -8,8 +8,12 @@ There are 2 modules:
 Where api is dependent on some packages from service.
 The main idea was to create valid module-info.java classes to define valid exports, but, which is more important even, to open valid packages to Spring to be used via reflection.
 
-The application cannot be started via Intellij IDEA.
+In order to run via Intellij IDEA:
+Set VM options: `--add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED`
 
-In order to run:
-* mvn clean install
-* java -jar api/target/api-1.0-SNAPSHOT-exec.jar
+In order to run through command line:
+```bash
+mvn clean install
+
+java --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED -jar api/target/api-1.0-SNAPSHOT-exec.jar
+```
