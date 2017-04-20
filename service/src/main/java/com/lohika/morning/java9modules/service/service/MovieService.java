@@ -2,10 +2,12 @@ package com.lohika.morning.java9modules.service.service;
 
 import com.lohika.morning.java9modules.service.domain.Movie;
 import com.lohika.morning.java9modules.service.repository.MovieRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -14,7 +16,7 @@ import java.util.stream.Stream;
 @Service
 public class MovieService {
 
-    @Resource
+    @Autowired
     private MovieRepository movieRepository;
 
     public List<Movie> allMovies() {
